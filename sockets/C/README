@@ -1,0 +1,32 @@
+# How big is a character in C?
+
+Guaranteed to be exactly 1 byte, meaning 8 bits (unless your architecture has different byte lengths which is rare).
+
+# What is IPC?
+
+Inter-process communication is the situation where processes communicate with one another and share data
+over a common communication protocol.
+Typically the setup includes a client and server, where one requests data and the other responds.
+
+# What are file descriptors?
+
+When a new file is open, it is associated with a _file descriptor_, an integer that is effectively an index into the
+array of open files by the kernel.
+
+3 file descriptors are always open:
+
+- 0, stdin
+- 1, stdout
+- 2, stderr
+
+The `open` function allocates sufficient resources to open a file and associates it with a file descriptor, which it returns.
+
+```C
+int fd = open("~/Project/tmp.txt");
+```
+
+The `read` function takes a file descriptor and reads a number of bytes into a buffer.
+
+```C
+int b = read(fd, &input, count);
+```
