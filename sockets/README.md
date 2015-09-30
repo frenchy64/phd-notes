@@ -7,6 +7,8 @@ These standards differ mainly in their reliability.
 UDP is more susceptible to dropping packets as it is a "connection-less" protocol.
 As such, it exposes the shortcomings of the network it uses as packets can be dropped.
 
+Sockets are like pipes but they support two-way communication, so they're like two-way FIFO's (which are unidirectional).
+
 # Multiplex
 
 ```
